@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>audio player(updated)</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>		
+		 <meta charset="UTF-8">
+   <meta name="author " content="@n0nym0u§">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0"> 
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+	</head>
+	<body>
+   
+		
+   <div id="temp">Add Songs?</div>   
+
+	<form id="form"><hr>
+	<input class="input" id ="surl" type="url"placeholder ="song url" required>
+	<input class="input" id="iurl" type="url" placeholder ="image url" required>
+	<input class="input" id="sname" type="text" placeholder ="song name" required>
+	<input id="reset" type ="reset" value ="Add"onclick ="addsong()"><hr><br /></form>
+	  
+	
+	<div id="page">
+	   <div class='share_drop'>
+	   <a onclick = wa()><img src='https://gymchef.com.br/assets/images/whatsapp.png'height='50px'></a>
+	  <a onclick = fb()><img src='https://cdn2.iconfinder.com/data/icons/micon-social-pack/512/facebook-512.png'height='50px'></a>
+	   <a onclick = cb()><img src='http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-ios-orange-gradient/bfa/bfa_copy/bfa_copy_flat-circle-white-on-ios-orange-gradient_512x512.png'height='50px'></a>
+	   <a onclick = gm()><img src='https://trollweb.no/wp-content/uploads/2016/05/gmail.png' height ='50px'></a>
+	   <a onclick = tw() onerror=alert("hi")><img src='http://www.wika.co.id/po-content/wika/assets/images/twitter.ico'height ='50px'></a>
+	   <a onclick = sl()><img src='https://www.sololearn.com/Icons/Courses/0.png'height='50px'></a>
+	   <a onclick = msg()><img src='https://cdn0.iconfinder.com/data/icons/Android-R2-png/512/Messages-Android-R.png'height='50px'></a>
+	   <a onclick = bt()><img src='https://lh4.ggpht.com/HMLFuX_iiBXLiiMPyPVHha5eoCK3yF4WTJYiMLjJKf31FrkgnzyNUExvBVLKnJRf33E=w300'height='50px'></a>
+   </div>	
+		   <div id="music"> 
+		 <p align ="center "> <img name="abc" id="slider1" src="https://i.ytimg.com/vi/Rmtx9slmodw/maxresdefault.jpg" width="190px" height="190px" />
+		
+			</p>
+			<audio name="xyz" id ="slider2" src="http://drive.funados-radio.fr/playlist/HITS%20DU%20MOMENT/Alan%20Walker%20-%20Faded.mp3" onended = "myFunction()">
+	Audio element not supported by your browser
+</audio></div>
+<hr>
+<div id = "btns">
+<span class="buttons" id="prev" onclick="prev()"> << </span>
+<span class="buttons" id="play" onclick ="audio()">play</span>
+ <span class="buttons" id="next" onclick="next()"> >> </span>
+   </div>
+
+<div id ="container">  
+ <div class="pl"><img src="https://ts2.tarafdari.com/contents/user376430/content-sound/16af04d977fa1db02a2a10b88d1bf9f9.jpg"height="40px" width="50px"> Hotel California</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user6984/content-sound/eurythmics.jpg"height="40px"width="50px">  Sweet dreams </div>
+  <div class="pl"><img src="https://ts1.tarafdari.com/contents/user137723/content-sound/metallica_logo_by_dutchlion-d4gsg73.png"height="40px"width="50px">Sad but true</div>
+  <div class ="pl"><img src="https://ts1.tarafdari.com/contents/user137723/content-sound/cover_585620392009.jpg"height="40px"width="50px"> Deep</div>
+  <div class ="pl"><img src="https://ts1.tarafdari.com/contents/user137723/content-sound/cover_585620392009.jpg"height="40px"width="50px"> Flying </div>
+  <div class="pl"><img src="https://ts1.tarafdari.com/contents/user137723/content-sound/bruce-dickinson-iron-maiden-metal-music-1920x1080-103684.jpg"height="40px"width="50px">Out Of The Shadows</div>
+  <div class="pl"><img src="https://ts12.tarafdari.com/contents/user799730/content-sound/ab67616d0000b2737b2d28bb848bf498f57e9e7c.jpg"height="40px"width="50px">Mary7Three</div>
+  <div class="pl"><img src="https://ts12.tarafdari.com/contents/user799730/content-sound/6_8.jpg"height="40px"width="50px">Falling in love with you</div>
+  <div class ="pl"><img src="https://ts12.tarafdari.com/contents/user799730/content-sound/1_12.jpg"height="40px"width="50px">faith</div>
+  <div class="pl"><img src="https://ts13.tarafdari.com/contents/user799730/content-sound/4_9.jpg"height="40px"width="50px">For no one</div>
+  <div class="pl"><img src="https://ts12.tarafdari.com/contents/user799730/content-sound/81h8hnpmwl._sl1500_.jpg"height="40px"width="50px">Clocks</div>
+  <div class="pl"><img src="https://ts13.tarafdari.com/contents/user799730/content-sound/6_3.jpg"height="40px"width="50px"> Fix you</div>
+  <div class="pl"><img src="https://ts13.tarafdari.com/contents/user799730/content-sound/3_4.jpg"height="40px"width="50px"> First in line</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user6984/content-sound/a3823071211_10.jpg"height="40px"width="50px">Show must go on</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user6984/content-sound/bowie-queen-735x413.jpg"height="40px"width="50px">Under Pressure</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user542074/content-sound/i_have_become_by_elmurodepinkfloyd-dbvjxxg.png.jpg"height="40px"width="50px">Comfortably Numb</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user6984/content-sound/radiohead_hero_688547436.jpg"height="40px"width="50px">2+2=5</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user588964/content-sound/screen-shot-2017-07-20-at-6.47.44-pm.jpg"height="40px"width="50px">Crawling</div>
+  <div class="pl"><img src="https://ts2.tarafdari.com/contents/user6984/content-sound/a3823071211_10.jpg"height="40px"width="50px">Bohemian Rhapsody</div>
+  <div class="pl"><img src="https://ts5.tarafdari.com/contents/user304589/content-sound/high.jpg"height="40px"width="50px">High hopes</div>
+			 
+	 
+	 </div>
+ 
+  
+	</body>
+</html>
+<style>
+body{
+	background-color:#000 ;
+	 font-family: "Times New Roman", Times, serif;
+}
+#page{
+	display:;
+}
+.share_drop{
+	display:none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 280px;
+	min-height:150px;
+	box-shadow: 0px 8px 16px 0px rgba(255,255,255,0.2);
+	z-index: 1;
+}
+.share_drop a {
+	padding: 12px 16px;
+	display:inline-block;
+}
+
+.dropbtn {
+	float:right;
+	margin-top:-18%;
+	
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	right: 0;
+	background-color: #f9f9f9;
+	min-width: 120px;
+	box-shadow: 0px 8px 16px 0px rgba(255,255,255,0.2);
+	z-index: 1;
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-size:15px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+.dropdown:hover .dropbtn {
+	background-color: ;
+}
+#reset{
+   background-color:white;
+   height:30px;
+   width:100px;
+   margin-left:35%;
+   text-align:center;
+   color:green;
+   border-radius:;
+   border-color:#336699;
+   margin-top:3px;
+   font-size:20px;
+   outline:none ;
+}
+#reset:hover{
+	background-color:green;
+	color:white ;
+}
+#form{
+	display:none;
+}
+.input{
+	background-color:#444;
+	height:30px;
+	width:330px ;
+	text-align:center ;
+	color:white;
+	border-color:black ;
+	font-size:15px;
+	outline:none;
+}
+.buttons{
+	padding:5px;
+	margin-left:5px ;
+	position:relative;
+	background-color:#abc ;
+	color:white ;
+	width:60px ;
+	height:10px;
+	
+}
+#play{
+	margin-left:10px ;
+}
+#btns{
+	text-align:center;
+	margin-top:5%;
+	font-size:1.5em;
+	
+}
+
+#temp{
+   background-color:#555;
+   color:white;
+   opacity:0.5;
+   margin-left:65%;
+   width:105px ;
+   text-align:center ;
+	font-family: "Times New Roman", Times, serif;
+}
+pre{
+	font-size:1.8em;
+	color:white ;
+	padding-top:20px;
+}
+
+#slider1{
+margin-top:-5%;
+	border-radius:50%;
+	border:5px solid white;
+	 
+}
+.update{
+		  -webkit-animation: spin 2s linear infinite;
+   -webkit-animation-play-state: running;   
+	animation: spin 2s linear infinite;
+	animation-play-state: running ;
+}
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg) ;
+	 }
+	
+	100% { -webkit-transform: rotate(360deg) ; 
+	}
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg) ; }
+}
+
+
+.pl{
+	text-align:center ;
+	background-color:#444;
+	height:30px ;
+	color:white ;
+	padding-top:10px;
+	opacity:;
+	margin-top:10px;
+	border-bottom:1.45px solid white;
+	
+}
+#container{
+	height:220px ;
+	overflow:scroll;
+	margin-top:5%;
+}
+.scrolly{
+	height:100px;
+	width:100px;
+}
+#container.containing{
+	height:300px;
+}
+.pl > img{
+	float:left;
+	margin-top:-9px;
+	border:1px solid #aaaaaa;
+}
+#container >.pl:hover{
+   font-size:22px;
+   height:32px;
+   background-color:#888888;
+   opacity:;
+   
+}
+#container >.pl:hover.pl>img{
+   height:43px;
+   width:55px;
+}
+</style>
+<script>
+function wa(){
+	window.location.href = "https://api.whatsapp.com/send?&text=hi%2C%20this%20is%20@n0nym0u§%20code";
+}
+function fb(){
+	window.location.href = "fb://messaging";
+}
+function cb(elementId){
+	var aux = document.createElement("input"); aux.setAttribute("value","hi, this is @n0nym0u§ code"); document.body.appendChild(aux); aux.select(); document.execCommand("copy"); document.body.removeChild(aux);
+	alert("copied to clipboard");
+}
+function gm(){
+ window.location.href = "mailto:hi@gmail.com?subject=this%20is&body=@n0nym0u§%20code";
+}
+function msg(){
+ window.location.href = "sms:+912356523565?body=hi%2C%20this%20is%20@n0nym0u§%20code";
+}
+
+function tw(){
+   window.location.href = "twitter://post?message=hi%2C%20this%20is%@n0nym0u§%20code";
+}
+function bt(){}
+
+alert("Click on add songs? to add songs \n Click on three dots(right of song) and share and whatsapp and select number and see magic..\Messaging, copy to clip board, gmail also functions very well.\Delete key deletes the song.")
+function addsong(){
+ 
+ img_url = $("#iurl").val();
+ song_url = $("#surl").val();
+ song_name= $("#sname").val();
+ var imslice = img_url.slice(-3);
+ var sslice = song_url.slice(-3);
+ 
+if(song_url !== '' && img_url !== '') {
+if((imslice !== ("jpg"||"png")) && (sslice !== ("mp3" || "ogg"))){
+	 alert("Please enter correct data !! ");
+ }else{
+ songs.push(song_url); 
+ images.push(img_url); 
+ apnd = $("#container").append("<div id='added' class='pl'><img src=" + img_url + " height='40px'width='50px'>" + song_name + "<div class='dropdown' style='float:right;'><img class='dropbtn' src = 'http://www.vvillageresorts.com/tour/skin/Image_2FB6632C_20CB_DBE7_41AE_0C4F8CFBCC75.png' height='40px'> <div class='dropdown-content'><a href=#>Download</a><a href=# class='like'>Like</a>  <a href=# class = 'share'>Share</a>  <a href=# class = 'del'>Delete</a> </div></div></div>");
+//-------------once------------------------\\
+$('.like').click(function(){
+	alert("added to liked songs.. 😁")
+})
+$(".share").hover(function(){
+	$(".share_drop").css("display","block");
+}/*,function(){$(".share_drop").css("display","none");}*/)
+ $(".dropdown").click(function(e){e.stopPropagation();})
+$(".del").click(function(){
+	var ind = $(this).parent().parent().parent().index();
+	var song = songs[ind];
+	var sung = $("#slider2").attr("src");
+if(song == sung ){
+document.getElementById("play").innerHTML = "play"
+if(ind >= songs.length - 1){
+ document.getElementById("slider2").src = songs[0];
+ document.getElementById("slider1").src = images[0];   }
+ else{
+ document.getElementById("slider2").src = songs[ind + 1];
+ document.getElementById("slider1").src = images[ind + 1];
+ 
+ }
+}
+	 songs.splice(ind,1);
+	 images.splice(ind,1);
+ $(this).parent().parent().parent().remove();
+ 
+})
+$(".pl").click(function(){
+var pl = $(this).index();
+var abc = document.getElementById('slider1');
+	var xyz = document.getElementById('slider2');
+	abc.src = images[pl]  ;
+	xyz.src = songs[pl];xyz.play();
+	document.getElementById("play").innerHTML ="pause";
+	 $("#slider1").addClass("update");		
+})	
+ alert("your song is added successfully..☺️👍");}
+}else{alert("Please enter the data !! ")}
+ 
+}
+window.onunhandledrejection = 
+  function(event) { 
+	event.preventDefault(); 
+  } 
+function myFunction(){
+   var sung = $("#slider2").attr("src");
+   var indx = songs.indexOf(sung);
+	  var abc = document.getElementById('slider1');
+	var xyz = document.getElementById('slider2');
+	if(indx >= songs.length - 1){
+	xyz.src = songs[0];
+	abc.src = images[0];	
+	}
+	else{
+	xyz.src = songs[indx + 1];
+	abc.src = images[indx + 1];}
+   xyz.play();
+	
+}  
+$(function(){
+	$("#page").click(function(){
+	$("#form").fadeOut(1);
+	$(".share_drop").hide(1000);
+	document.getElementById("temp").innerHTML = "Add Songs?";
+});
+$("#container").scroll(function() {
+var scrollTop = $("#container").scrollTop();
+   if (scrollTop < 150) {
+	   var maxHeight = 150 - 75 * ((scrollTop - 100)) / 200;
+	}
+	$('#slider1').css({
+		'max-height': maxHeight + "px",
+	'max-width':maxHeight + "px"
+	});
+if ($(this).scrollTop() > 10){  
+  $('#container').addClass('containing');
+	}
+  else{
+	$('#container').removeClass('containing'); 
+  }
+});
+})
+function next() {
+ $("#slider1").addClass("update");   
+document.getElementById("play").innerHTML ="pause";	  
+var sung = $("#slider2").attr("src");
+   var indx = songs.indexOf(sung);
+	  var abc = document.getElementById('slider1');
+	var xyz = document.getElementById('slider2');
+	if(indx >= songs.length - 1){
+	xyz.src = songs[0];
+	abc.src = images[0];	
+	}
+	else{
+	xyz.src = songs[indx + 1];
+	abc.src = images[indx + 1];}
+	xyz.play();
+}
+function prev() {
+ $("#slider1").addClass("update"); 
+document.getElementById("play").innerHTML ="pause";		
+var sung = $("#slider2").attr("src");
+   var indx = songs.indexOf(sung);
+	  var abc = document.getElementById('slider1');
+	var xyz = document.getElementById('slider2'); 
+	if(indx == 0) {
+	xyz.src = songs[songs.length - 1];
+	abc.src = images[images.length - 1];  
+	}
+	else{
+	xyz.src = songs[indx - 1];
+	abc.src = images[indx - 1];}
+	xyz.play();
+}
+function audio(){
+   var xyz = document.getElementById("slider2");
+   var isReady = xyz.readyState;
+   if(isReady > 2){
+	if(xyz.paused === true){
+			xyz.play();
+ $("#slider1").addClass("update");		   document.getElementById("play").innerHTML ="pause";
+		}
+		else{
+			xyz.pause();
+ $("#slider1").removeClass("update");					document.getElementById("play").innerHTML ="play" ;
+			
+		}
+	}
+	else{
+		document.getElementById("play").style.opacity = 0.2;
+		var opacityTest = setInterval(function(){
+			if(xyz.readyState > 2){
+				document.getElementById("play").style.opacity = 1;
+				clearInterval(opacityTest);
+			}
+		},100);
+	}
+}
+
+$(function(){
+	 
+ 
+//--------------same-----------------------\\ 
+$(".pl").append("<div class='dropdown' style='float:right;'><img class='dropbtn' src = 'http://www.vvillageresorts.com/tour/skin/Image_2FB6632C_20CB_DBE7_41AE_0C4F8CFBCC75.png' height='40px'> <div class='dropdown-content'><a href=#>Download</a><a href=# class = like>Like</a>  <a href=# class='share'>Share</a>  <a href=# class = 'del'>Delete</a> </div></div>");
+//------------twice------------------------\\
+$('.like').click(function(){
+	alert("added to liked songs.. 😁😁")
+})
+$(".share").hover(function(){
+	$(".share_drop").css("display","block");
+}/*,function(){$(".share_drop").css("display","none");}*/)
+$(".dropdown").click(function(e){e.stopPropagation();})
+$(".del").click(function(){
+  
+   
+	var ind = $(this).parent().parent().parent().index();
+	var song = songs[ind];
+	var sung = $("#slider2").attr("src");
+if(song == sung ){
+document.getElementById("play").innerHTML ="play";
+$("#slider1").removeClass("update");
+if(ind >= songs.length - 1){
+ document.getElementById("slider2").src = songs[0];
+ document.getElementById("slider1").src = images[0];   }
+ else{
+ document.getElementById("slider2").src = songs[ind + 1];
+ document.getElementById("slider1").src = images[ind + 1];
+ 
+ }
+}
+	 songs.splice(ind,1);
+	 images.splice(ind,1);
+ $(this).parent().parent().parent().remove();
+ 
+})
+$(".pl").click(function(){
+var pl = $(this).index();
+var abc = document.getElementById('slider1');
+	var xyz = document.getElementById('slider2');
+	abc.src = images[pl]  ;
+	xyz.src = songs[pl];xyz.play();
+	document.getElementById("play").innerHTML ="pause";
+	 $("#slider1").addClass("update");		
+})
+//-------------—--end--------------------\\
+   $("#temp").click(function(){
+var w = document.getElementById("temp").innerHTML;
+var x = "Go Back";
+var y = "Add Songs?";
+if(w != y){
+	document.getElementById("temp").innerHTML = y;
+
+}else{
+	document.getElementById("temp").innerHTML = x;
+}
+$("#form").slideToggle(1000);
+ })
+})
+
+ var images = [
+ // 1 hotel california
+	'https://ts2.tarafdari.com/contents/user376430/content-sound/16af04d977fa1db02a2a10b88d1bf9f9.jpg', 
+	//2 
+	'https://ts2.tarafdari.com/contents/user6984/content-sound/eurythmics.jpg', 
+	//3 
+	'https://ts1.tarafdari.com/contents/user137723/content-sound/metallica_logo_by_dutchlion-d4gsg73.png', 
+	//4 
+	'https://ts1.tarafdari.com/contents/user137723/content-sound/cover_585620392009.jpg', 
+	//5 
+	 'https://ts1.tarafdari.com/contents/user137723/content-sound/cover_585620392009.jpg', 
+	  //6 
+	 'https://ts1.tarafdari.com/contents/user137723/content-sound/bruce-dickinson-iron-maiden-metal-music-1920x1080-103684.jpg', 
+	  //7 
+	 'https://ts12.tarafdari.com/contents/user799730/content-sound/ab67616d0000b2737b2d28bb848bf498f57e9e7c.jpg', 
+	 //8
+	  'https://ts12.tarafdari.com/contents/user799730/content-sound/6_8.jpg', 
+	  //9 
+	  'https://ts12.tarafdari.com/contents/user799730/content-sound/1_12.jpg', 
+	  //10
+	  'https://ts13.tarafdari.com/contents/user799730/content-sound/4_9.jpg', 
+	  //11
+	  'https://ts12.tarafdari.com/contents/user799730/content-sound/81h8hnpmwl._sl1500_.jpg', 
+	   //12
+	  'https://ts13.tarafdari.com/contents/user799730/content-sound/6_3.jpg', 
+	  //13
+	  'https://ts13.tarafdari.com/contents/user799730/content-sound/3_4.jpg',
+	  //14
+	  'https://ts2.tarafdari.com/contents/user6984/content-sound/a3823071211_10.jpg',
+	  //15
+	  'https://ts2.tarafdari.com/contents/user6984/content-sound/bowie-queen-735x413.jpg',
+	  //16
+	  'https://ts2.tarafdari.com/contents/user542074/content-sound/i_have_become_by_elmurodepinkfloyd-dbvjxxg.png.jpg',
+	  //17
+	  'https://ts2.tarafdari.com/contents/user6984/content-sound/radiohead_hero_688547436.jpg',
+	  //18
+	  'https://ts2.tarafdari.com/contents/user588964/content-sound/screen-shot-2017-07-20-at-6.47.44-pm.jpg',
+	  //19
+	  'https://ts2.tarafdari.com/contents/user6984/content-sound/a3823071211_10.jpg',
+	  //20
+	  'https://ts5.tarafdari.com/contents/user304589/content-sound/high.jpg'
+	  ];
+	  
+
+ var songs = [
+ //1 hotel california
+   'https://ts2.tarafdari.com/contents/user376430/content-sound/eagles_-_hotel_california.mp3', 
+   //2 Sweet dreams 
+   'https://ts2.tarafdari.com/contents/user6984/content-sound/153.eurythmics_-_sweet_dreams_are_made_of_this.mp3', 
+   //3 Sad but true
+   'https://ts1.tarafdari.com/contents/user137723/content-sound/sad_but_true.mp3',
+   //4 Deep
+  'https://ts1.tarafdari.com/contents/user137723/content-sound/anathema_-_deep_mp3.pm_.mp3', 
+  //5 Flying
+  'https://ts1.tarafdari.com/contents/user277270/content-sound/09_flying.mp3', 
+  //6 Iron Maiden-Out Of The Shadows
+  'https://ts1.tarafdari.com/contents/user137723/content-sound/out_of_the_shadows.mp3', 
+  //7 Seven Mary Three
+  'https://ts12.tarafdari.com/contents/user799730/content-sound/cumbersome.mp3', 
+  //8 falling in love with you
+	'https://ts12.tarafdari.com/contents/user799730/content-sound/falling_in_love_with_you.mp3', 
+	//9 faith
+	'https://ts12.tarafdari.com/contents/user799730/content-sound/faith.mp3', 
+	//10 For no one
+	'https://ts13.tarafdari.com/contents/user799730/content-sound/for_no_one.mp3',
+	//11 Clocks
+	'https://ts12.tarafdari.com/contents/user799730/content-sound/clocks.mp3', 
+	//12 Fix you
+	"https://ts13.tarafdari.com/contents/user799730/content-sound/fix_you.mp3", 
+	//13 First in line
+	'https://ts13.tarafdari.com/contents/user799730/content-sound/first_in_line.mp3',
+	//14 Show must go on
+	'https://ts2.tarafdari.com/contents/user6984/content-sound/18._the_show_must_go_on_remastered_2011.mp3',
+	//15 Under pressure
+	'https://ts2.tarafdari.com/contents/user6984/content-sound/11._under_pressure_remastered_2011.mp3',
+	//16 Comfortabley numb
+	'https://ts2.tarafdari.com/contents/user542074/content-sound/pink_floyd_-_comfortably_numb.mp3',
+	//17 2+2=5
+	'https://ts2.tarafdari.com/contents/user6984/content-sound/13_-_22_5.mp3',
+	//18 Crawling
+	'https://ts2.tarafdari.com/contents/user588964/content-sound/crawling_official_video_-_linkin_park.mp3',
+	//19 Bohemian Rhapsody
+	'https://ts7.tarafdari.com/contents/user644549/content-sound/queen_-_bohemian_rhapsody.mp3',
+	//20 High hopes
+	'https://ts5.tarafdari.com/contents/user304589/content-sound/pink_floyd_-_high_hopes_official_music_video.mp3'
+	];
+</script>
